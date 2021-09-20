@@ -16,7 +16,7 @@ Frontend и backend выполнены как отдельные проекты.
 
 ### endpoints
 
-- `POST /register` - регистрация пользователя. Обязательные параметры: `email`, `firstName`, `password`. Параметр `lastName` опциональный. Если не заполнен один из обязательных параметров возвращается status code **400** `BAD_REQUEST`. В случае успеха вернется status code **201** `CREATED`. 
+- `POST /register` - регистрация пользователя. Обязательные параметры: *email*, *firstName*, *password*. Параметр *lastName* опциональный. Если не заполнен один из обязательных параметров возвращается status code **400 BAD_REQUEST**. В случае успеха вернется status code **201 CREATED**. 
 
   Пример тела запроса:
   
@@ -39,9 +39,9 @@ Frontend и backend выполнены как отдельные проекты.
     "password": "password"
   }
   ```
-  В случае отправки запроса на данный endpoint с не валидными данными также вернется status code **400** `BAD_REQUEST`.
+  В случае отправки запроса на данный endpoint с не валидными данными также вернется status code **400 BAD_REQUEST**.
 
-- `GET /hello` - возвращает строку "Hello, &lt;authorized user&gt;", где вместо &lt;authorized user&gt; выводится имя авторизованного пользователя. Данный endpoint доступен только авторизованным пользователям. В противном случае вернется status code **401** `FORBIDDEN`.
+- `GET /hello` - возвращает строку "Hello, &lt;authorized user&gt;", где вместо &lt;authorized user&gt; выводится имя авторизованного пользователя. Данный endpoint доступен только авторизованным пользователям. В противном случае вернется status code **401 FORBIDDEN**.
 
 ## Сборка и запуск проекта
 
@@ -59,12 +59,19 @@ TODO
 
 - Перейти в директорию *backend* и в терминале выполнить команду
 
-  `./mvnw spring-boot:run`
+  `./mvnw spring-boot:run` (Linux)
+  
+  или
+  
+  `mvnw spring-boot:run` (Windows)
 
 #### Запуск frontend
 
-- Перейти в директорию *frontend* и в отдельном окне терминала выполнить команду
+- Перейти в директорию *frontend* и в отдельном окне терминала выполнить команды
 
-  `npm run serve`
+  ```
+  npm install
+  npm run serve
+  ```
 
-После этого приложение будет доступно на `loclhost:8080`.
+  После этого приложение будет доступно на *loclhost:8080*.
